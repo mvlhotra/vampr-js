@@ -3,10 +3,10 @@ const expect = chai.expect;
 
 const Vampire = require('../vampire.js');
 
-describe("Vampire", function() {
+describe("Vampire", function () {
 
   let rootVampire;
-  beforeEach( function() {
+  beforeEach(function () {
     rootVampire = new Vampire("root");
   });
 
@@ -14,10 +14,10 @@ describe("Vampire", function() {
 
     let offspring1, offspring2, offspring3, offspring4;
     beforeEach(() => {
-      offspring1 = new Vampire();
-      offspring2 = new Vampire();
-      offspring3 = new Vampire();
-      offspring4 = new Vampire();
+      offspring1 = new Vampire('v1');
+      offspring2 = new Vampire('v2');
+      offspring3 = new Vampire('v3');
+      offspring4 = new Vampire('v4');
 
       rootVampire.addOffspring(offspring1);
       rootVampire.addOffspring(offspring2);
@@ -25,7 +25,9 @@ describe("Vampire", function() {
       offspring3.addOffspring(offspring4);
     });
 
+
     it("should return true when called on root vampire", () => {
+      console.log(offspring4);
       expect(rootVampire.isMoreSeniorThan(offspring1)).to.equal(true);
       expect(rootVampire.isMoreSeniorThan(offspring2)).to.equal(true);
       expect(rootVampire.isMoreSeniorThan(offspring3)).to.equal(true);
@@ -42,7 +44,7 @@ describe("Vampire", function() {
     it("should return true when a vampire is more senior", () => {
       expect(offspring3.isMoreSeniorThan(offspring4)).to.equal(true);
     });
-    
+
     it("should return false when a vampire is not more senior", () => {
       expect(offspring4.isMoreSeniorThan(offspring3)).to.equal(false);
     });

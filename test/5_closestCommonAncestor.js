@@ -3,14 +3,14 @@ const expect = chai.expect;
 
 const Vampire = require('../vampire.js');
 
-describe("Vampire", function() {
+describe("Vampire", function () {
 
   let rootVampire;
-  beforeEach( function() {
+  beforeEach(function () {
     rootVampire = new Vampire("root");
   });
 
-  describe("closestCommonAncestor", function() {
+  describe("closestCommonAncestor", function () {
 
     let offspring1, offspring2, offspring3, offspring4, offspring5, offspring6, offspring7, offspring8;
     beforeEach(() => {
